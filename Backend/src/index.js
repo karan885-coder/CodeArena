@@ -13,8 +13,9 @@ const videoRouter = require("./routes/videoCreator");
 
 
 app.use(cors({
-    origin: 'http://localhost:5173',//mera frontend yha hosted hai jo bhi mai data dunga iss valli ip ko dunga ,browser isse block mat karna
+    // origin: 'http://localhost:5173',
     //origin: '*', koi bhi acess kar sakta hai
+    origin: 'https://code-arena-khaki.vercel.app',
     credentials: true 
 }))
 
