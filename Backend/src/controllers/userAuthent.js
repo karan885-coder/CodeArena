@@ -25,7 +25,13 @@ const register = async (req,res)=>{
             _id:user._id
 
     }
-     res.cookie('token',token,{maxAge: 60*60*1000});
+    //  res.cookie('token',token,{maxAge: 60*60*1000});
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        maxAge: 60 * 60 * 1000
+    });
      res.status(201).json({
             user:reply,
             message:"User Registered Successfully"
@@ -63,7 +69,13 @@ const login = async (req,res)=>{
         }
 
         const token =  jwt.sign({_id:user._id , emailId:emailId, role:user.role},process.env.JWT_KEY,{expiresIn: 60*60});
-        res.cookie('token',token,{maxAge: 60*60*1000});
+        // res.cookie('token',token,{maxAge: 60*60*1000});
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            maxAge: 60 * 60 * 1000
+        });
         // res.status(200).send("Logged In Succeessfully");
         //Logged In Succeessfully iske badle user ke data ki bhejenge takki baar baar request na maarna pade
         res.status(201).json({
@@ -93,7 +105,13 @@ const logout = async(req,res)=>{
     //    Token add kar dung Redis ke blockList
     //    Cookies ko clear kar dena.....
 
-    res.cookie("token",null,{expires: new Date(Date.now())});
+    // res.cookie("token",null,{expires: new Date(Date.now())});
+    res.cookie("token", null, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        expires: new Date(Date.now())
+    });
     res.send("Logged Out Succesfully");
 
     }
@@ -116,7 +134,13 @@ const adminRegister = async(req,res)=>{
     
      const user =  await User.create(req.body);
      const token =  jwt.sign({_id:user._id , emailId:emailId, role:user.role},process.env.JWT_KEY,{expiresIn: 60*60});
-     res.cookie('token',token,{maxAge: 60*60*1000});
+    //  res.cookie('token',token,{maxAge: 60*60*1000});
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        maxAge: 60 * 60 * 1000
+    });
      res.status(201).send("User Registered Successfully");
     }
     catch(err){
