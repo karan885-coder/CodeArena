@@ -1,0 +1,11 @@
+# Ignore backend dependencies
+Backend/node_modules/
+
+# Ignore backend environment file
+Backend/.env
+
+# Ignore VS Code settings
+.vscode/
+
+# Log files
+*.log
