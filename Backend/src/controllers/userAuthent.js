@@ -25,7 +25,13 @@ const register = async (req,res)=>{
             _id:user._id
 
     }
-     res.cookie('token',token,{maxAge: 60*60*1000});
+    //  res.cookie('token',token,{maxAge: 60*60*1000});
+    res.cookie('token', token, {
+        maxAge: 60*60*1000,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none'
+    });
     //  res.status(201).send("User Registered Successfully");
      res.status(201).json({
             user:reply,//hum saari info nhi bhejna chate user ki thast why not doing user:user
@@ -64,7 +70,13 @@ const login = async (req,res)=>{
         }
 
         const token =  jwt.sign({_id:user._id , emailId:emailId, role:user.role},process.env.JWT_KEY,{expiresIn: 60*60});
-        res.cookie('token',token,{maxAge: 60*60*1000});
+        // res.cookie('token',token,{maxAge: 60*60*1000});
+        res.cookie('token', token, {
+            maxAge: 60*60*1000,
+            httpOnly: true,
+            secure: true,
+            sameSite: 'none'
+        });
         // res.status(200).send("Logged In Succeessfully");
         //Logged In Succeessfully iske badle user ke data ki bhejenge takki baar baar request na maarna pade
         res.status(201).json({
@@ -117,7 +129,13 @@ const adminRegister = async(req,res)=>{
     
      const user =  await User.create(req.body);
      const token =  jwt.sign({_id:user._id , emailId:emailId, role:user.role},process.env.JWT_KEY,{expiresIn: 60*60});
-     res.cookie('token',token,{maxAge: 60*60*1000});
+    //  res.cookie('token',token,{maxAge: 60*60*1000});
+    res.cookie('token', token, {
+        maxAge: 60*60*1000,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none'
+    });
      res.status(201).send("User Registered Successfully");
     }
     catch(err){
