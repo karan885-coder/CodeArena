@@ -1,5 +1,9 @@
-<img width="1083" height="650" alt="image" src="https://github.com/user-attachments/assets/1609894a-c493-45d6-a144-16ac2167bf27" />CodeArena
+<img width="706" height="603" alt="image" src="https://github.com/user-attachments/assets/e87c68af-2a00-4298-9ab0-97b3658000d2" />
+<img width="1902" height="892" alt="image" src="https://github.com/user-attachments/assets/6558398a-3b3c-4304-8533-fea2d862793d" />
+<img width="1916" height="900" alt="image" src="https://github.com/user-attachments/assets/0196a734-ac86-4eda-8c10-ad1036da6b53" />
+<img width="1905" height="685" alt="image" src="https://github.com/user-attachments/assets/92dd76f1-10ff-4887-983c-f0113e724e1b" />
 
+CodeArena
 CodeArena is an AI-integrated online coding platform where users can solve programming problems, run and submit their solutions, track submissions, and get AI-powered assistance while solving problems.
 
 The platform also provides an admin system for creating coding problems, validating reference solutions, and managing video editorials.
@@ -54,7 +58,6 @@ Features
   Code execution is handled using Judge0 rather than running user-submitted code directly on the backend.
   
   The platform supports code execution for languages such as:
-  
     C++
     Java
     JavaScript
@@ -103,7 +106,7 @@ Features
   
   This avoids sending large video files through the application server.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 Tech Stack
 
 Frontend
@@ -139,38 +142,7 @@ External Services
 Judge0 — Code execution
 Google Gemini — AI coding assistant
 Cloudinary — Video storage, delivery and transformations
-System Architecture
-                         +-----------------------------------+
-                         |           Client Side             |
-                         |                                   |
-                         | React + Redux Toolkit             |
-                         | Tailwind + React Router            |
-                         | Monaco Editor + Axios             |
-                         +-----------------+-----------------+
-                                           |
-                                    HTTP / REST API
-                                    + Cookies
-                                           |
-                                           v
-              +---------------------------------------------------+
-              |                  Express Server                    |
-              |                                                   |
-              | Authentication / Authorization                    |
-              | User Routes / Problem Routes / Submission Routes |
-              | AI Routes / Video Routes                          |
-              +--------------------------+------------------------+
-                                         |
-          +------------------------------+------------------------------+
-          |              |               |              |              |
-          v              v               v              v              v
-   +------------+  +------------+  +------------+  +------------+  +------------+
-   |  MongoDB   |  |   Redis    |  |   Judge0   |  |   Gemini   |  | Cloudinary |
-   |            |  |            |  |            |  |            |  |            |
-   | Users      |  | JWT Token  |  | Code       |  | AI Doubt   |  | Video      |
-   | Problems   |  | Blacklist  |  | Execution  |  | Solver     |  | Storage    |
-   | Submission |  |            |  |            |  | Chat       |  | Delivery   |
-   | Video Meta |  | token:<JWT>|  | Test Cases |  | Assistant  |  | Thumbnail  |
-   +------------+  +------------+  +------------+  +------------+  +------------+
+
 
 📖 Detailed Documentation
 
