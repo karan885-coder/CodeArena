@@ -3,7 +3,7 @@
 <img width="1916" height="900" alt="image" src="https://github.com/user-attachments/assets/0196a734-ac86-4eda-8c10-ad1036da6b53" />
 <img width="1905" height="685" alt="image" src="https://github.com/user-attachments/assets/92dd76f1-10ff-4887-983c-f0113e724e1b" />
 
-CodeArena
+
 CodeArena is an AI-integrated online coding platform where users can solve programming problems, run and submit their solutions, track submissions, and get AI-powered assistance while solving problems.
 
 The platform also provides an admin system for creating coding problems, validating reference solutions, and managing video editorials.
@@ -141,7 +141,7 @@ Backend
 External Services
 Judge0 — Code execution
 Google Gemini — AI coding assistant
-Cloudinary — Video storage, delivery and transformations
+Cloudinary — Video storage
 
 
 📖 Detailed Documentation
