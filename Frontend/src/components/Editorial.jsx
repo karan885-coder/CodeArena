@@ -5,9 +5,9 @@ import { Pause, Play } from 'lucide-react';
 
 const Editorial = ({ secureUrl, thumbnailUrl, duration }) => {
    
-   // 👇 Add this one line
+   //  Add this one line
   const cleanThumbnail = thumbnailUrl?.match(/src='([^']+)'/)?.[1] || thumbnailUrl;
-  // console.log("cleanThumbnail:", cleanThumbnail)
+  console.log("cleanThumbnail:", cleanThumbnail)
 
 
   const videoRef = useRef(null);
@@ -64,7 +64,7 @@ const Editorial = ({ secureUrl, thumbnailUrl, duration }) => {
        <video
         ref={videoRef}
         src={secureUrl}
-        poster={cleanThumbnail}  // 👈 change thumbnailUrl to cleanThumbnail
+        poster={cleanThumbnail}  //  change thumbnailUrl to cleanThumbnail
         onClick={togglePlayPause}
         className="w-full aspect-video bg-black cursor-pointer"
       />

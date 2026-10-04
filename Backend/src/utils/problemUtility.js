@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-
+/* af6a610b75mshd087cfa3eb38445p14b819jsn11c20b9c5906  ---bharat key */
 const getLanguageById = (lang)=>{
 
     const language = {
@@ -24,7 +24,8 @@ const options = {
     base64_encoded: 'false'
   },
   headers: {
-    'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+    // 'x-rapidapi-key': 'ab99c6ec42mshfd636ec7c6687efp1b9043jsna684835b0591',
+    'x-rapidapi-key': 'af6a610b75mshd087cfa3eb38445p14b819jsn11c20b9c5906',
     'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
     'Content-Type': 'application/json'
   },
@@ -66,7 +67,8 @@ const options = {
     fields: '*'
   },
   headers: {
-     'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+    // 'x-rapidapi-key': 'ab99c6ec42mshfd636ec7c6687efp1b9043jsna684835b0591',
+     'x-rapidapi-key': 'af6a610b75mshd087cfa3eb38445p14b819jsn11c20b9c5906',
     'x-rapidapi-host': 'judge0-ce.p.rapidapi.com'
   }
 };

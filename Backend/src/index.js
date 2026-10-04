@@ -13,9 +13,8 @@ const videoRouter = require("./routes/videoCreator");
 
 
 app.use(cors({
-    // origin: 'http://localhost:5173',
+    origin: 'http://localhost:5173',
     //origin: '*', koi bhi acess kar sakta hai
-    origin: 'https://code-arena-khaki.vercel.app',
     credentials: true 
 }))
 
@@ -35,14 +34,9 @@ const InitalizeConnection = async ()=>{
         await Promise.all([main(),redisClient.connect()]);
         console.log("DB Connected");
         
-        // app.listen(process.env.PORT, ()=>{
-        //     console.log("Server listening at port number: "+ process.env.PORT);
-        // })
-        const PORT = process.env.PORT || 3000;
-
-        app.listen(PORT, () => {
-            console.log("Server listening at port number: " + PORT);
-        });
+        app.listen(process.env.PORT, ()=>{
+            console.log("Server listening at port number: "+ process.env.PORT);
+        })
 
     }
     catch(err){
@@ -52,4 +46,3 @@ const InitalizeConnection = async ()=>{
 
 
 InitalizeConnection();
-

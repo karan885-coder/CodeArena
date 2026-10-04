@@ -35,7 +35,7 @@ const generateUploadSignature = async (req, res) => {
     // Generate signature
     const signature = cloudinary.utils.api_sign_request(
       uploadParams,
-      process.env.CLOUDINARY_API_SECRET
+      process.env.CLOUDINARY_API_SECRET//creatinng signature using private key
     );
 
     res.json({
@@ -99,6 +99,9 @@ const saveVideoMetadata = async (req, res) => {
     // });
     //  const thumbnailUrl = cloudinary.image(cloudinaryResource.public_id,{resource_type: "video"})
     const thumbnailUrl = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/video/upload/so_0,w_640,h_360,c_fill,q_auto/${cloudinaryResource.public_id}.jpg`;
+
+  
+     //website : https://cloudinary.com/documentation/video_effects_and_enhancements#video_thumbnails
 
     // Create video solution record
     const videoSolution = await SolutionVideo.create({

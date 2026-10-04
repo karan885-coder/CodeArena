@@ -34,8 +34,7 @@ function AdminUpload(){
     
         try {
           // Step 1: Get upload signature from backend
-          const signatureResponse = await axiosClient.get(`/video/create/${problemId}`);
-          const { signature, timestamp, public_id, api_key, cloud_name, upload_url } = signatureResponse.data;
+         C
     
           // Step 2: Create FormData for Cloudinary upload
           const formData = new FormData();

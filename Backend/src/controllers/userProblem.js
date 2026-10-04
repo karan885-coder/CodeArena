@@ -92,7 +92,7 @@ const getProblemById=async(req,res)=>{
 
     try {
       if(!id){
-        return res.status(400).send("Missing Id Field");
+        return res.status(400).send("Missing Id Field");//must write return taaki aage na chle 
       }
       //we won't be showing all info inclluding hidden test case and ref sol as we will be charging for it only show some selected fields in free
       // const getProblem=await Problem.findById(id);
@@ -151,7 +151,14 @@ const getAllProblem=async(req,res)=>{
 const solvedAllProblembyUser =  async(req,res)=>{
    
     try{
+       // const userId = req.result._id;//from usermiddleware  req.result
+
+      // const user =  await User.findById(userId).populate({
+      //   path:"problemSolved",
+      //   select:"_id title difficulty tags"
+      // });
       
+      // res.status(200).send(user.problemSolved);
       //we want those solved problem as well with their proper schema and we won't be making all those call for each rather we use populate
       const userId = req.result._id;
 

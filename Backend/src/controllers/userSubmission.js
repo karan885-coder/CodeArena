@@ -20,13 +20,13 @@ const submitCode = async (req,res)=>{
       if(language==='cpp')
         language='c++'
       
-      // console.log(language);
+      console.log(language);
       
     //    Fetch the problem from database
        const problem =  await Problem.findById(problemId);
     //    testcases(Hidden)
     
-   
+    //   Kya apne submission store kar du pehle....
     const submittedResult = await Submission.create({
           userId,
           problemId,
